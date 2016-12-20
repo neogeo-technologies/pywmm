@@ -5,6 +5,8 @@ build/
 dist/
 pywmm.egg-info/
 
+/pywmm/pywmm.c
+
 # IntelliJ project files
 .idea
 *.iml
