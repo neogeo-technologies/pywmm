@@ -1,23 +1,42 @@
 # pywmm
 Python module wrapping NOAA WMM C lib using Cython
 
-License : public domain - since its source code comes mainly from https://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml
+## License
+Public domain - since its source code comes mainly from https://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml
 (which is in public domain):
 - pywmm/data/WMM.COF
 - pywmm/wmm/EGM9615.h
 - pywmm/wmm/GeomagnetismHeader.h
 - GeomagnetismLibrary.c
 
-Installation :
+## Requirements
+- Cython (see http://cython.readthedocs.io/en/latest/src/quickstart/install.html)
+- a C compiler (gcc, msvc...)
+
+## Installation
+### Compilation and installation on MacOs :
 ```
 $ cd your/local/dir
 $ git clone https://github.com/neogeo-technologies/pywmm.git
 $ cd pywmm
 $ python setup.py install
-or maybe sudo python setup.py install
 ```
+You may need to sudo the last line.
 
-Usage :
+###Compilation and installation on Windows :
+```
+$ cd your/local/dir
+$ git clone https://github.com/neogeo-technologies/pywmm.git
+$ cd pywmm/pywmm
+$ cython -a pywmm.pyx
+$ python setup.py build_ext --inplace --compiler=msvc
+$ python setup.py install
+```
+On windows you may need to use the Microsoft Visual C++ compiler for Python command prompt tool.
+See https://github.com/cython/cython/wiki/CythonExtensionsOnWindows for details.
+
+
+## Usage
 ```
 $ python
 >>> import pywmm.pywmm
