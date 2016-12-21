@@ -38,8 +38,8 @@ See https://github.com/cython/cython/wiki/CythonExtensionsOnWindows for details.
 ## Usage
 ```
 $ python
->>> import pywmm.pywmm
->>> pywmm.pywmm.get_geomagnetics_elements(80,0,0)
+>>> import pywmm
+>>> pywmm.get_geomagnetics_elements(80,0,0)
 {'Decl': -3.411333428128801, 'GV': -3.411333428128801, 'Zdot': 10.7609431335789,
 'Ydot': 51.48795302969407, 'GVdot': 0.4386276610626788, 'F': 54844.200805169676,
 'H': 6627.667373902938, 'Xdot': -11.068757776171879, 'Incldot': 0.015994219459516176,
