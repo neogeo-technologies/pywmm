@@ -11,7 +11,7 @@ VERSION = "0.1"
 DESCR = "Python module wrapping NOAA WMM C lib using Cython"
 URL = "https://github.com/neogeo-technologies/pywmm"
 REQUIRES = ['cython']
-LICENSE='MIT'
+LICENSE='public domain'
 
 AUTHOR = "Benjamin Chartier (Neogeo Technologies)"
 EMAIL = "b.chartier@neogeo-technologies.fr"

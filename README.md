@@ -1,9 +1,8 @@
 # pywmm
 Python module wrapping NOAA WMM C lib using Cython
 
-License : MIT
-
-The following files have been downloaded at https://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml (public domain):
+License : public domain - since its source code comes mainly from https://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml
+(which is in public domain):
 - pywmm/data/WMM.COF
 - pywmm/wmm/EGM9615.h
 - pywmm/wmm/GeomagnetismHeader.h
