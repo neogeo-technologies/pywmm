@@ -8,7 +8,8 @@
 
 // This function merely comes from the wmm_point.c file of the WMM utilities available
 // at https://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml
-MAGtype_GeoMagneticElements get_geomagnetics_elements(double lon, double lat, double alt, double year, char* cof_file_name)
+MAGtype_GeoMagneticElements get_geomagnetics_elements(
+    double lat, double lon, double alt, char* alt_mode, double year, char* cof_file_name)
 {
     MAGtype_MagneticModel * MagneticModels[1], *TimedMagneticModel;
     MAGtype_Ellipsoid Ellip;
@@ -43,13 +44,23 @@ MAGtype_GeoMagneticElements get_geomagnetics_elements(double lon, double lat, do
     /* Set EGM96 Geoid parameters */
     Geoid.GeoidHeightBuffer = GeoidHeightBuffer;
     Geoid.Geoid_Initialized = 1;
-    Geoid.UseGeoid = 1;
 
     // Coordinates
     CoordGeodetic.phi = lat;
     CoordGeodetic.lambda = lon;
-    CoordGeodetic.HeightAboveGeoid = alt;
-    MAG_ConvertGeoidToEllipsoidHeight(&CoordGeodetic, &Geoid);
+
+    if(alt_mode[0] == 'e') /* User entered height above WGS-84 ellipsoid, copy it to CoordGeodetic->HeightAboveEllipsoid */
+    {
+        Geoid.UseGeoid = 0;
+        CoordGeodetic.HeightAboveEllipsoid = alt;
+    }
+    else /* User entered height above MSL, convert it to the height above WGS-84 ellipsoid */
+    {
+        Geoid.UseGeoid = 1;
+        CoordGeodetic.HeightAboveGeoid = alt;
+        MAG_ConvertGeoidToEllipsoidHeight(&CoordGeodetic, &Geoid);
+    }
+
     UserDate.DecimalYear = year;
 
     MAG_GeodeticToSpherical(Ellip, CoordGeodetic, &CoordSpherical); /*Convert from geodetic to Spherical Equations: 17-18, WMM Technical report*/
