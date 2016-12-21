@@ -30,6 +30,6 @@ $ python
 'Incl': 83.05910660208956}
 ```
 
-Test values for the 2015 WMM.COF file are evalable there:
+Test values for the 2015 WMM.COF file are available there:
 https://www.ngdc.noaa.gov/geomag/WMM/data/WMM2015/WMM2015testvalues.pdf
 (with altitudes relative to ellipsoid not geoid)
