@@ -29,7 +29,6 @@ $ cd your/local/dir
 $ git clone https://github.com/neogeo-technologies/pywmm.git
 $ cd pywmm/pywmm
 $ cython -a pywmm.pyx
-$ python setup.py build_ext --inplace --compiler=msvc
 $ python setup.py install
 ```
 On windows you may need to use the Microsoft Visual C++ compiler for Python command prompt tool.
