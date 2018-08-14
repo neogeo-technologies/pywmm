@@ -5,7 +5,7 @@ from Cython.Distutils import build_ext
 from Cython.Build import cythonize
 
 NAME = "pywmm"
-VERSION = "0.1"
+VERSION = "0.2"
 DESCR = "Python module wrapping NOAA WMM C lib using Cython"
 URL = "https://github.com/neogeo-technologies/pywmm"
 REQUIRES = ['cython']

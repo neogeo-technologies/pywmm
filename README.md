@@ -23,7 +23,7 @@ $ python setup.py install
 ```
 You may need to sudo the last line.
 
-###Compilation and installation on Windows :
+### Compilation and installation on Windows :
 ```
 $ cd your/local/dir
 $ git clone https://github.com/neogeo-technologies/pywmm.git
@@ -39,7 +39,7 @@ See https://github.com/cython/cython/wiki/CythonExtensionsOnWindows for details.
 ```
 $ python
 >>> import pywmm
->>> pywmm.get_geomagnetics_elements(80,0,0)
+>>> pywmm.get_geomagnetics_elements(lat=80.0,lon=0.0,alt=0.0, year=2016)
 {'Decl': -3.411333428128801, 'GV': -3.411333428128801, 'Zdot': 10.7609431335789,
 'Ydot': 51.48795302969407, 'GVdot': 0.4386276610626788, 'F': 54844.200805169676,
 'H': 6627.667373902938, 'Xdot': -11.068757776171879, 'Incldot': 0.015994219459516176,

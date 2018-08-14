@@ -75,12 +75,14 @@ def get_geomagnetics_elements(lat, lon, alt, alt_mode="g", year=None, cof_file_p
         import errno
         raise IOError(errno.ENOENT, os.strerror(errno.ENOENT), cof_file_path)
 
+    cof_file_path_latin1 = cof_file_path.encode('latin-1')
+
     cdef double dlat = lat
     cdef double dlon = lon
     cdef double dalt = alt
     cdef double dyear = year
-    cdef char* scof_file_path = cof_file_path
-    cdef char* salt_mod = alt_mode
+    cdef char* scof_file_path = <bytes>cof_file_path_latin1
+    cdef char* salt_mod = <bytes>alt_mode
 
     # alt is the height above MSL / above geoid (not above ellipsoid)!
     # unit for alt: kilometer
